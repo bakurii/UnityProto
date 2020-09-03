@@ -11,7 +11,7 @@ public class ReactionIcon : MonoBehaviour
     void Start()
     {
         dialogueIcon = GameObject.Find("DialogueIcon").GetComponent<Image>();
-        dialogueIcon.enabled = false;
+        //dialogueIcon.enabled = false;
     }
 
     void Update()
@@ -29,14 +29,14 @@ public class ReactionIcon : MonoBehaviour
         if (!observerScript.distanceToThePlayer)
         {
             //Debug.Log("Distance to the player" + observerScript.distanceToThePlayer);
-            dialogueIcon.enabled = false;
+            //dialogueIcon.enabled = false;
         }
 
         if (observerScript.distanceToThePlayer)
         {
             Debug.Log("Distance to the player" + observerScript.distanceToThePlayer);
             Debug.Log("MAHTAVAAA SE TOIMIIIIIIIIIII");
-            dialogueIcon.enabled = true;
+            //dialogueIcon.enabled = true;
         }
     }
 

@@ -11,26 +11,27 @@ public class Observer : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         GameObject icon = GameObject.Find("DialogueIcon");
-        Image reactionIcon = GameObject.Find("DialogueIcon").GetComponent<Image>();
+        ReactionIcon reactionIcon = icon.GetComponent<ReactionIcon>();
 
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("OSUISUOSUOSISOI");
             distanceToThePlayer = true;
-            
+            reactionIcon.dialogueIcon.enabled = true;
         }
     }
 
 
     public void OnTriggerExit(Collider other)
     {
-        GameObject observer = GameObject.Find("Observer");
-        Observer observerScript = observer.GetComponent<Observer>();
+        GameObject icon = GameObject.Find("DialogueIcon");
+        ReactionIcon reactionIcon = icon.GetComponent<ReactionIcon>();
 
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Sopivan kaukana");
             distanceToThePlayer = false;
+            reactionIcon.dialogueIcon.enabled = false;
         }
     }
 }
